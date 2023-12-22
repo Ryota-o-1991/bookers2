@@ -1,0 +1,9 @@
+<div>
+  <%= image_tag @book.get_image %>
+  <p>title：<%= @book.title %></p>
+  <p>説明：<%= @book.body %></p>
+  <p>投稿ユーザー画像：<%= image_tag 'no_image.jpg' %></p>
+  <% if @book.user == current_user %>
+    <%= link_to "Destroy", book_path(@book), method: :delete %>
+  <% end %>
+</div>
